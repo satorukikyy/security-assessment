@@ -59,7 +59,7 @@ body::after{content:'';position:fixed;inset:0;
   margin-bottom:20px;white-space:nowrap;
 }
 .hero-logo span{color:var(--green)}
-.hero-sub{font-size:clamp(.85rem,2.5vw,1.05rem);color:var(--muted2);margin-bottom:40px;line-height:1.6}
+.hero-sub{font-size:clamp(.85rem,2.5vw,1.05rem);color:var(--muted2);margin-bottom:0;line-height:1.6}
 .name-form{display:flex;flex-direction:column;gap:16px}
 .name-form label{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--green)}
 .name-input{
@@ -69,6 +69,15 @@ body::after{content:'';position:fixed;inset:0;
 }
 .name-input::placeholder{color:var(--muted)}
 .name-input:focus{border-color:var(--green);box-shadow:4px 4px 0 var(--green)}
+/* meta strip */
+.hero-meta{display:flex;gap:0;margin-top:28px;border:2px solid var(--s4);overflow:hidden}
+.hero-meta-item{
+  flex:1;padding:14px 12px;text-align:center;border-right:2px solid var(--s4);
+  background:var(--s2);
+}
+.hero-meta-item:last-child{border-right:none}
+.hero-meta-val{font-family:'Space Mono',monospace;font-size:clamp(.8rem,2.2vw,1.05rem);font-weight:700;color:var(--text);white-space:nowrap}
+.hero-meta-key{font-family:'Space Mono',monospace;font-size:clamp(.52rem,.18em + .5vw,.6rem);letter-spacing:2px;text-transform:uppercase;color:var(--muted2);margin-top:4px;white-space:nowrap}
 
 /* ── BUTTONS ── */
 .btn{
@@ -248,9 +257,11 @@ canvas#radar{display:block;max-width:100%;height:auto}
 
 <!-- NAME -->
 <div id="s-name" class="screen active">
-  <div class="hero-logo"><span>//</span> CYBER<span>PATH</span></div>
-  <p class="hero-sub">15 skenario dunia nyata untuk menemukan jalur karier<br>keamanan siber yang paling cocok untukmu.</p>
-  <div class="card" style="margin-top:8px">
+  <div style="border-bottom:1px solid var(--s4);padding-bottom:28px;margin-bottom:28px">
+    <div class="hero-logo"><span>//</span> CYBER<span>PATH</span></div>
+    <p class="hero-sub">15 skenario dunia nyata untuk menemukan<br>jalur karier keamanan siber yang paling cocok untukmu.</p>
+  </div>
+  <div class="card" style="margin-bottom:0">
     <div class="tag-label" style="margin-bottom:20px">// mulai dari sini</div>
     <div class="name-form">
       <label for="nameInput">Nama kamu siapa?</label>
@@ -258,25 +269,25 @@ canvas#radar{display:block;max-width:100%;height:auto}
       <button class="btn btn-green" onclick="goIntro()" style="margin-top:8px">Lanjut →</button>
     </div>
   </div>
-  <div style="margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
-    <div style="border:2px solid var(--s4);padding:14px;background:var(--s2)">
-      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:3px;color:var(--green);margin-bottom:6px">WAKTU</div>
-      <div style="font-size:.9rem">~8–12 menit</div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-val">15</div>
+      <div class="hero-meta-key">Skenario</div>
     </div>
-    <div style="border:2px solid var(--s4);padding:14px;background:var(--s2)">
-      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:3px;color:var(--green);margin-bottom:6px">PERTANYAAN</div>
-      <div style="font-size:.9rem">15 skenario</div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-val">4</div>
+      <div class="hero-meta-key">Jalur Karier</div>
     </div>
-    <div style="border:2px solid var(--s4);padding:14px;background:var(--s2)">
-      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:3px;color:var(--green);margin-bottom:6px">HASIL</div>
-      <div style="font-size:.9rem">4 jalur karier</div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-val">~10'</div>
+      <div class="hero-meta-key">Durasi</div>
     </div>
-    <div style="border:2px solid var(--s4);padding:14px;background:var(--s2)">
-      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:3px;color:var(--green);margin-bottom:6px">LAPORAN</div>
-      <div style="font-size:.9rem">PDF gratis</div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-val">PDF</div>
+      <div class="hero-meta-key">Laporan</div>
     </div>
   </div>
-</div>
+</div><!-- #s-name -->
 
 <!-- INTRO -->
 <div id="s-intro" class="screen">
